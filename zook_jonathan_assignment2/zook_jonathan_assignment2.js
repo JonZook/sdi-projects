@@ -12,6 +12,7 @@ var royalTitle = "Sir";
 var fullName = "Sir So-and-so"
 var joustWins = 0;
 var socialState = false
+var goneSocial = false
 
 //Procedures
 
@@ -48,8 +49,24 @@ var joust = function (joustRounds) {
     for (var round = 1; round < joustRounds; round++) {
         console.log(round + " jousts won!");
     };
-    console.log(round + " wins should be enough to get noticed!")
+    console.log(round + " wins should be enough to get noticed!");
+    return round;
 }; //joust (number) function
+
+
+var getSocial = function (socialState, maxTrips) {
+    var trips = 0;
+    while (trips < maxTrips) {
+        if (socialState == true) {
+            console.log("You've got your eye on someone special!");
+            return socialState;
+        };
+        trips++;
+        console.log(trips + " social shindigs attended");
+    };
+    console.log(trips + " events should be enough to find a romantic interest.");
+    return true;
+};  //getSocial (Boolean) function
 
 
 
@@ -69,6 +86,7 @@ fullName = getName(royalTitle, realName);
 
 socialState = confirm("You will need to attend many events to find a person to court.  Are you a social butterfly?");
 
-getSocial = 
+goneSocial = getSocial (socialState, 5);
 
 joustWins = joust(10);
+
