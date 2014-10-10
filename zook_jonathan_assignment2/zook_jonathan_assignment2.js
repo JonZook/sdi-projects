@@ -10,6 +10,8 @@ var realName = "So-and-so";
 var knightMe = true;
 var royalTitle = "Sir";
 var fullName = "Sir So-and-so"
+var joustWins = 0;
+var socialState = false
 
 //Procedures
 
@@ -37,13 +39,17 @@ var getTitle = function (knightMe) {
 var getName = function (royalTitle, realName) {
     var fullName = royalTitle + " " + realName;
     return fullName;
-};  //getName function
+};  //getName (string) function
 
 
-var joust = function (knightMe, realName) {
-    
-    
-}; //joust function
+var joust = function (joustRounds) {
+    var round = 0;
+    console.log("Knights win favor in the courts and with Princesses by winning Jousts.");
+    for (var round = 1; round < joustRounds; round++) {
+        console.log(round + " jousts won!");
+    };
+    console.log(round + " wins should be enough to get noticed!")
+}; //joust (number) function
 
 
 
@@ -61,6 +67,8 @@ royalTitle = getTitle(knightMe);
 
 fullName = getName(royalTitle, realName);
 
-console.log(fullName);
+socialState = confirm("You will need to attend many events to find a person to court.  Are you a social butterfly?");
 
-joust(knightMe, realName);
+getSocial = 
+
+joustWins = joust(10);
