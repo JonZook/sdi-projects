@@ -1,7 +1,7 @@
 // Jonathan Zook
 // 10-09-2014
 // Project 2
-// Theme
+// Courtly Romance
 
 //Global Variables
 
@@ -90,3 +90,5 @@ goneSocial = getSocial (socialState, 5);
 
 joustWins = joust(10);
 
+console.log(fullName + ", it is " + goneSocial + " that you are accepted in royal court.");
+console.log("A Knight that has won at least " + joustWins + " tournaments and a Princess can find romance.");
