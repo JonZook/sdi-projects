@@ -16,13 +16,21 @@ var goneSocial = false
 
 //Procedures
 
-var romance = function (romantic, realName) {
-    if (romantic === "yes") {
-        console.log(realName + ", romance is out there for the right person.");
+var romance = function (romantic, realName, royalTitle) {
+    if (royalTitle === "Sir") {
+        if (romantic === "yes") {
+            console.log(royalTitle + " " + realName + ", romance is out there for knights who win jousts.");
+        }else {
+            console.log(royalTitle + " " + realName + ", courtly romance is more about conquest than love.");
+        };  //"romantic" is re-used here but is not the global variable
     }else {
-        console.log(realName + ", courtly romance is not always about love.");
-    };  //"romantic" is re-used here but is not the global variable   
-};  //romance procedure
+        if (romantic === "yes") {
+            console.log(royalTitle + " " + realName + ", romance is waiting for a princess who is in demand.");
+        }else {
+            console.log(royalTitle + " " + realName + ", courtly romance is more about intrigue than love.");
+        };  //"romantic" is re-used here but is not the global variable        
+    };
+};  //romance procedure with nested conditional
 
 
 //Functions
@@ -55,7 +63,7 @@ var joust = function (joustRounds) {
 
 
 var getSocial = function (socialState, maxTrips) {
-    var trips = 0;
+    var trips = 0;    
     while (trips < maxTrips) {
         if (socialState == true) {
             console.log("You've got your eye on someone special!");
@@ -74,13 +82,13 @@ var getSocial = function (socialState, maxTrips) {
 
 realName = prompt ("What is your name?");
 
-romantic = prompt ("Are you a romantic, yes or no?");
-
-romance(romantic, realName);
-
 knightMe = confirm("Courtly romance in medieval times was between a Knight and a Princess.  Are you a Knight?");
 
+romantic = prompt ("Are you a romantic, yes or no?");
+
 royalTitle = getTitle(knightMe);
+
+romance(romantic, realName, royalTitle);
 
 fullName = getName(royalTitle, realName);
 
