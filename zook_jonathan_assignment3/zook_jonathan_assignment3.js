@@ -62,17 +62,20 @@ var joust = function (joustRounds) {
 }; //joust (number) function
 
 
-var getSocial = function (socialState, maxTrips) {
-    var trips = 0;    
+var getSocial = function (socialState, trips) {
+    var party = ["Royal Ball", "Festival", "Feast", "Royal Excursion", "Royal Hunt"];
+    var bonusEvent = party.pop ();
+    party[party.length] = "Royal Court";
+    var maxTrips = party.length;
     while (trips < maxTrips) {
         if (socialState == true) {
             console.log("You've got your eye on someone special!");
             return socialState;
         };
         trips++;
-        console.log(trips + " social shindigs attended");
+        console.log("You attend a " + party[trips - 1] + ".  " + trips + " social shindigs attended.");
     };
-    console.log(trips + " events should be enough to find a romantic interest.");
+    console.log("A " + bonusEvent + " is coming up but, " + trips + " events should be enough to find a romantic interest.");
     return true;
 };  //getSocial (Boolean) function
 
@@ -94,7 +97,7 @@ fullName = getName(royalTitle, realName);
 
 socialState = confirm("You will need to attend many events to find a person to court.  Are you a social butterfly?");
 
-goneSocial = getSocial (socialState, 5);
+goneSocial = getSocial (socialState, 0);
 
 joustWins = joust(10);
 
