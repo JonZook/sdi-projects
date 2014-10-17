@@ -54,11 +54,14 @@ var getName = function (royalTitle, realName) {
 var joust = function (joustRounds) {
     var round = 0;
     console.log("Knights win favor in the courts and with Princesses by winning Jousts.");
-    for (var round = 1; round < joustRounds; round++) {
+    for (var round = 1; round < joustRounds + 1; round++) {
+        for (var fighter = 0; fighter < 10; fighter++) {
+            console.log("A " + json.knights[fighter].winner + " against " + json.knights[fighter].knightName + "! ");
+        };
         console.log(round + " jousts won!");
     };
-    console.log(round + " wins should be enough to get noticed!");
-    return round;
+    console.log(joustRounds + " wins should be enough to get noticed!");
+    return joustRounds;
 }; //joust (number) function
 
 
@@ -75,13 +78,13 @@ var getSocial = function (socialState, trips) {
         trips++;
         console.log("You attend a " + party[trips - 1] + ".  " + trips + " social shindigs attended.");
     };
-    console.log("A " + bonusEvent + " is coming up but, " + trips + " events should be enough to find a romantic interest.");
+    console.log("A " + bonusEvent + " is coming up, but " + trips + " events should be enough to find a romantic interest.");
     return true;
 };  //getSocial (Boolean) function
 
 
 
-//Project 2 Start
+//Project 3 Start
 
 realName = prompt ("What is your name?");
 
@@ -99,7 +102,7 @@ socialState = confirm("You will need to attend many events to find a person to c
 
 goneSocial = getSocial (socialState, 0);
 
-joustWins = joust(10);
+joustWins = joust(5);
 
 console.log(fullName + ", it is " + goneSocial + " that you are accepted in royal court.");
-console.log("A Knight that has won at least " + joustWins + " tournaments and a Princess can find romance.");
+console.log("A Knight, that has won at least " + joustWins + " tournaments, and a Princess can find romance.");
