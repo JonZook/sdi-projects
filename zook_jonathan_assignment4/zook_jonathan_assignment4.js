@@ -15,6 +15,10 @@ var webGood1 = "http://web.com";
 var webGood2 = "https://web.com";
 var webBad1 = "http:/web.com";
 var webBad2 = "web.com";
+var stringNumber1 = "42";
+var stringNumber2 = "195";
+
+
 
 
 //Functions
@@ -43,7 +47,10 @@ var urlVerify = function (url) {
     };
 };  // urlVerify Function
 
-
+var getNumber = function (stringNumber) {
+    realNumber = parseInt(stringNumber);
+    return realNumber;
+};  // Convert to Number function
 
 
 
@@ -66,3 +73,7 @@ console.log("Does " + webGood1 + " start with http:// or https://? Answer: " + u
 console.log("Does " + webGood2 + " start with http:// or https://? Answer: " + urlVerify(webGood2));
 console.log("Does " + webBad1 + " start with http:// or https://? Answer: " + urlVerify(webBad1));
 console.log("Does " + webBad2 + " start with http:// or https://? Answer: " + urlVerify(webBad2));
+
+console.log("Let's turn some strings into numbers!");
+console.log(stringNumber1 + " sure would look better as a number, like this:  " + getNumber(stringNumber1));
+console.log(stringNumber2 + " sure would look better as a number, like this:  " + getNumber(stringNumber2));
