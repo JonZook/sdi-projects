@@ -20,6 +20,7 @@ var stringNumber2 = "195";
 var decimal1 = 3;
 var decimal2 = 2;
 var decNumber = 3.14159;
+var sentence = "How about those apples."
 
 
 
@@ -59,7 +60,24 @@ var getDecimal = function (number, decPlaces) {
     return newNumber;
 };  //Decimal Place Function
 
-
+var capWords = function (sentence) {
+    var start = 0;
+    var newSentence = "";
+    while (sentence.indexOf(" ") != -1) {
+        chunk = sentence.substring(start, sentence.indexOf(" "));
+        firstLetter = chunk.charAt(0);
+        firstLetter = firstLetter.toUpperCase();
+        chunk = chunk.substring(1, chunk.length);
+        newSentence = newSentence + firstLetter + chunk + " ";
+        sentence = sentence.substring(sentence.indexOf(" ") + 1, sentence.length);
+    };
+    console.log(sentence);
+    firstLetter = sentence.charAt(0);
+    firstLetter = firstLetter.toUpperCase();
+    chunk = sentence.substring(1, sentence.length);
+    newSentence = newSentence + firstLetter + chunk;
+    return newSentence;
+};  //Capitalize words function
 
 //Program
 
@@ -88,3 +106,6 @@ console.log(stringNumber2 + " sure would look better as a number, like this:  " 
 console.log("Let's narrow down a number to a few decimal places!");
 console.log(getDecimal(decNumber, decimal1) + " is what " + decNumber + " would look like with only " + decimal1 + " decimal places.");
 console.log(getDecimal(decNumber, decimal2) + " is what " + decNumber + " would look like with only " + decimal2 + " decimal places.");
+
+console.log("Let's capitalize the first letter of each word in a sentence.");
+console.log("'" + sentence + "' looks a bit strange when written as, '" + capWords(sentence) + "'");
