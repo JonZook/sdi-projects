@@ -17,7 +17,9 @@ var webBad1 = "http:/web.com";
 var webBad2 = "web.com";
 var stringNumber1 = "42";
 var stringNumber2 = "195";
-
+var decimal1 = 3;
+var decimal2 = 2;
+var decNumber = 3.14159;
 
 
 
@@ -52,6 +54,11 @@ var getNumber = function (stringNumber) {
     return realNumber;
 };  // Convert to Number function
 
+var getDecimal = function (number, decPlaces) {
+    newNumber = number.toFixed(decPlaces);
+    return newNumber;
+};  //Decimal Place Function
+
 
 
 //Program
@@ -77,3 +84,7 @@ console.log("Does " + webBad2 + " start with http:// or https://? Answer: " + ur
 console.log("Let's turn some strings into numbers!");
 console.log(stringNumber1 + " sure would look better as a number, like this:  " + getNumber(stringNumber1));
 console.log(stringNumber2 + " sure would look better as a number, like this:  " + getNumber(stringNumber2));
+
+console.log("Let's narrow down a number to a few decimal places!");
+console.log(getDecimal(decNumber, decimal1) + " is what " + decNumber + " would look like with only " + decimal1 + " decimal places.");
+console.log(getDecimal(decNumber, decimal2) + " is what " + decNumber + " would look like with only " + decimal2 + " decimal places.");
